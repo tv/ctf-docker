@@ -7,7 +7,7 @@ ENV LC_CTYPE=C.UTF-8 \
 RUN apt-get update && \
     apt-get install -y nmap curl wget netcat build-essential jq strace ltrace \
       gcc-multilib net-tools neovim vim-scripts xxd gdb gdb-multiarch procps \
-      git make tmux httpie python3-pip sudo perl tar grep zstd
+      git make tmux httpie python3-pip sudo perl tar grep zstd file
 
 RUN git clone https://github.com/radare/radare2 && \
     cd radare2 && \
