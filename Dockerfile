@@ -9,9 +9,9 @@ RUN apt-get update && \
       gcc-multilib net-tools neovim vim-scripts xxd gdb gdb-multiarch procps \
       git make tmux httpie python3-pip sudo perl tar grep zstd file
 
-RUN git clone https://github.com/radare/radare2 && \
-    cd radare2 && \
-    sys/install.sh
+#RUN git clone https://github.com/radare/radare2 && \
+    #cd radare2 && \
+    #sys/install.sh
 
 RUN git clone https://github.com/pwndbg/pwndbg && \
     cd pwndbg && \
@@ -33,8 +33,7 @@ COPY etc/ /etc/
 
 RUN echo "source ~/.gdbinit-maxmind.py" >> ~/.gdbinit
 
-# Fix GDB/TMUX bug
-RUN pip install -U pwntools==4.8.0b0
+RUN pip install -U pwntools
 
 WORKDIR "/ctf"
 CMD ["tmux"]
